@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<title>
+		{% block title %}
+		{% endblock %}
+	</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+  <a class="navbar-brand" href="{{ url_for('index') }}">BUBUKA</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav mr-auto"></ul>
+  	   <a class="btn btn-light" href="{{ url_for('logout') }}">Выход</a>
+    </div>
+  </nav>
+
+<main role="main" class="container">
+	{% block content %}
+	{% endblock %}
+</main>
+</body>
+</html>

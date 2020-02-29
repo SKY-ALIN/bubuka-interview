@@ -1,0 +1,35 @@
+{% extends 'index.html' %}
+
+{% block title %}
+Главная
+{% endblock %}
+
+{% block content %}
+
+{% for continent, cities in continents.items() %}
+<h2>{{ continent }}</h2>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Город</th>
+      <th scope="col">Страна</th>
+      <th scope="col">Население</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {% for city in cities %}
+    <tr>
+      <th scope="row">{{ city.id }}</th>
+      <td>{{ city.city }}</td>
+      <td>{{ city.country }}</td>
+      <td>{{ city.population }}</td>
+    </tr>
+    {% endfor %}
+
+  </tbody>
+</table><br>
+{% endfor %}
+
+{% endblock %}

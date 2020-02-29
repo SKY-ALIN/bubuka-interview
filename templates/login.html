@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Авторизация</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style media="screen">
+    .form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+}
+  </style>
+</head>
+<body class="text-center">
+  <form action="" method="POST" class="form-signin">
+    <h2>Вход в аккаунт</h2><br>
+				{{ form.hidden_tag() }}
+
+				<div class="form-group mb-3">
+				  <!-- {{ form.login.label(for="emailaddress") }} -->
+				  {{ form.login(class="form-control", type="email", id="emailaddress", placeholder="Введите ваш email") }}
+				</div>
+
+				<div class="form-group mb-3">
+				  <!-- {{ form.password.label(for="password") }} -->
+				  {{ form.password(class="form-control", id="password", placeholder="Введите ваш пароль") }}
+				</div>
+
+				<div class="form-group mb-3">
+				  <div class="custom-control custom-checkbox">
+					{{ form.remember_me(class="custom-control-input", id="checkbox-signin") }}
+					{{ form.remember_me.label(class="custom-control-label", for="checkbox-signin") }}
+				  </div>
+				</div>
+
+				<div class="form-group mb-0 text-center">
+				  {{ form.submit(class="btn btn-primary btn-block") }}
+				</div>
+
+			  </form>
+</body>
+  </html>
